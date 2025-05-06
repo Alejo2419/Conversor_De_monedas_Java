@@ -1,16 +1,42 @@
 package com.alura.modelos;
 
+import java.util.Map;
+import  conexion.Conexion;
+
 public class Monedas {
-    double dolarHoy = 4215;
-    double pesoColombiano = 4215.0;
-    double pesoArgentino = 900.0;
-    double realBrasileno = 5.1;
-    double bolivarVenezolano = 36.0;
-    double pesoMexicano = 17.0;
-    double pesoChileno = 940.0;
-    double pesoUruguayo = 39.0;
-    double guaraniParaguayo = 7300.0;
-    int seleccion
+    double dolarHoy = 0;
+    double pesoColombiano = 0;
+    double pesoArgentino = 0;
+    double realBrasileno = 0;
+    double bolivarVenezolano = 0;
+    double pesoMexicano = 0;
+    double pesoChileno = 0;
+    double pesoUruguayo = 0;
+    double guaraniParaguayo = 0;
+    int seleccion = 0;
+
+    public void ActualizarTasas() {
+        try {
+            Map<String, Double> tasas = Conexion.obtenerTasas();
+            if (tasas.containsKey("COP")) this.pesoColombiano = tasas.get("COP");
+            if (tasas.containsKey("ARS")) this.pesoArgentino = tasas.get("ARS");
+            if (tasas.containsKey("BRL")) this.realBrasileno = tasas.get("BRL");
+            if (tasas.containsKey("VES")) this.bolivarVenezolano = tasas.get("VES");
+            if (tasas.containsKey("MXN")) this.pesoMexicano = tasas.get("MXN");
+            if (tasas.containsKey("CLP")) this.pesoChileno = tasas.get("CLP");
+            if (tasas.containsKey("UYU")) this.pesoUruguayo = tasas.get("UYU");
+            if (tasas.containsKey("PYG")) this.guaraniParaguayo = tasas.get("PYG");
+            if (tasas.containsKey("COP")) this.dolarHoy = tasas.get("COP");
+
+        }  catch (Exception e) {
+            System.out.println("Error al actualizar tasas: " + e.getMessage());
+        }
+
+    }
+
+
+
+
     public int getSeleccion() {
         return seleccion;
     }

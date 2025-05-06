@@ -11,8 +11,8 @@ public class Menus {
                     ---7) Peso Uruguayo -------
                     ---8) Guarani Paraguayo ---
                     """;
-    String menuAmonedas = "--Para Convertir Dolar A Monedas:--";
-    String menuADolar = "--Para Convertir Monedas A Dolar:--";
+    String menuAmonedas = "--Convertir de Dólares a Moneda-\uD83D\uDCB6";
+    String menuADolar = "--Para Convertir Monedas A Dolar-\uD83D\uDCB7";
     String respuesta1 = "Tus Dolares equivalen a: $";
     String respuesta2 = "Tu Valor en Moneda local equivale a: $";
 
